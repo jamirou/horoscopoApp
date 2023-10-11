@@ -1,7 +1,8 @@
-package com.jamirodev.horoscopoapp
+package com.jamirodev.horoscopoapp.ui.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.jamirodev.horoscopoapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
