@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#1f1f1f</color>
+    <color name="primary_Dark">#121212</color>
     <color name="secondary">#eeeeee</color>
     <color name="accent">#03a9f4</color>
     <color name="gold">#fe9f36</color>
