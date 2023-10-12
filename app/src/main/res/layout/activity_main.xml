@@ -19,6 +19,7 @@
         app:navGraph="@navigation/main_graph" />
     
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
