@@ -8,6 +8,12 @@ import com.jamirodev.horoscopoapp.domain.model.HoroscopeInfo
 
 class HoroscopeAdapter(private var horoscopeList: List<HoroscopeInfo> = emptyList()) :
     RecyclerView.Adapter<HoroscopeViewHolder>() {
+
+    fun updateList(list: List<HoroscopeInfo>) {
+        horoscopeList = list
+        notifyDataSetChanged()
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoroscopeViewHolder {
         return HoroscopeViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.item_horoscope, parent, false)

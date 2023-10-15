@@ -1,7 +1,6 @@
 package com.jamirodev.horoscopoapp.ui.horoscope
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,7 +46,7 @@ class HoroscopeFragment : Fragment() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 horoscopeViewModel.horoscope.collect {
-                    Log.i("Jamiro", it.toString())
+                    horoscopeAdapter.updateList(it)
                 }
             }
         }
