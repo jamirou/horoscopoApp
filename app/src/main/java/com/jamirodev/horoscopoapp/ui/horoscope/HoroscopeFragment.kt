@@ -10,15 +10,18 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.jamirodev.horoscopoapp.databinding.FragmentHoroscopeBinding
+import com.jamirodev.horoscopoapp.ui.horoscope.adapter.HoroscopeAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class HoroscopeFragment : Fragment() {
 
     private val horoscopeViewModel by viewModels<HoroscopeViewModel>()
+    private lateinit var horoscopeAdapter: HoroscopeAdapter
+
     private var _binding: FragmentHoroscopeBinding? = null
     private val binding get() = _binding!!
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,13 +30,23 @@ class HoroscopeFragment : Fragment() {
     }
 
     private fun initUI() {
+        initList()
         initUIState()
+    }
+
+    private fun initList() {
+        horoscopeAdapter = HoroscopeAdapter()
+
+        binding.rvHoroscope.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = horoscopeAdapter
+        }
     }
 
     private fun initUIState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                horoscopeViewModel.horoscope.collect{
+                horoscopeViewModel.horoscope.collect {
                     Log.i("Jamiro", it.toString())
                 }
             }
