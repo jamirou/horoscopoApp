@@ -53,9 +53,9 @@ class HoroscopeFragment : Fragment() {
                 Taurus -> HoroscopeModel.Taurus
                 Virgo -> HoroscopeModel.Virgo
             }
-            
+
             findNavController().navigate(
-                HoroscopeFragmentDirections.actionHoroscopeFragmentToHoroscopeDetailActivity()
+                HoroscopeFragmentDirections.actionHoroscopeFragmentToHoroscopeDetailActivity(type)
             )
         })
 
