@@ -13,4 +13,8 @@
         <item name="android:fontFamily">@font/dancing_regular</item>
         <item name="android:textSize">30sp</item>
     </style>
+    <style name="Body" parent="Title">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

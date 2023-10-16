@@ -15,16 +15,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/red" />
-    
+
     <TextView
+        android:id="@+id/tvTitle"
+        style="@style/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tvTitle"
-        app:layout_constraintTop_toBottomOf="@id/ivDetail"
-        style="@style/Title"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Hello android"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivDetail"
+        tools:text="Hello android" />
+
+    <TextView
+        android:id="@+id/tvBody"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        style="@style/Body"
+        tools:text="JAJAJAJAJAAJAJAJjjajaajajajjejeje"
+        android:layout_margin="24dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
