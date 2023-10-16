@@ -16,6 +16,16 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/red" />
 
+    <ImageView
+        android:id="@+id/ivBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:padding="24dp"
+        app:tint="@color/gold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/tvTitle"
         style="@style/Title"
@@ -28,16 +38,23 @@
 
     <TextView
         android:id="@+id/tvBody"
+        style="@style/Body"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        style="@style/Body"
-        tools:text="JAJAJAJAJAAJAJAJjjajaajajajjejeje"
         android:layout_margin="24dp"
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="JAJAJAJAJAAJAJAJjjajaajajajjejeje" />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="@color/gold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
