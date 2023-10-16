@@ -21,6 +21,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvTitle"
         app:layout_constraintTop_toBottomOf="@id/ivDetail"
+        style="@style/Title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Hello android"

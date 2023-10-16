@@ -5,4 +5,12 @@
     </style>
 
     <style name="Theme.HoroscopoApp" parent="Base.Theme.HoroscopoApp" />
+
+
+    <style name="Title">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/secondary</item>
+        <item name="android:fontFamily">@font/dancing_regular</item>
+        <item name="android:textSize">30sp</item>
+    </style>
 </resources>
