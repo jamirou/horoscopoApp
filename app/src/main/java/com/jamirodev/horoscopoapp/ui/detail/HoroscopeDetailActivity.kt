@@ -3,6 +3,7 @@ package com.jamirodev.horoscopoapp.ui.detail
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -36,7 +37,7 @@ class HoroscopeDetailActivity : AppCompatActivity() {
                     when (it) {
                         HoroscopeDetailState.Loading -> loadingState()
                         is HoroscopeDetailState.Error -> errorState()
-                        is HoroscopeDetailState.Success -> successState()
+                        is HoroscopeDetailState.Success -> successState(it)
                     }
                 }
             }
@@ -44,11 +45,16 @@ class HoroscopeDetailActivity : AppCompatActivity() {
     }
 
     private fun loadingState() {
+        binding.pb.isVisible = true
     }
 
     private fun errorState() {
+        binding.pb.isVisible = false
     }
 
-    private fun successState() {
+    private fun successState(state: HoroscopeDetailState.Success) {
+        binding.pb.isVisible = false
+        binding.tvTitle.text = state.sign
+        binding.tvBody.text = state.prediction
     }
 }
