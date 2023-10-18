@@ -1,7 +1,7 @@
 package com.jamirodev.horoscopoapp.domain
 
-import com.jamirodev.horoscopoapp.data.network.response.PredictionResponse
+import com.jamirodev.horoscopoapp.domain.model.PredictionModel
 
 interface Repository {
-    suspend fun getPrediction(sign:String): PredictionResponse?
+    suspend fun getPrediction(sign:String): PredictionModel?
 }

@@ -1,12 +1,13 @@
 package com.jamirodev.horoscopoapp.data.network
 
+import com.jamirodev.horoscopoapp.data.RepositoryImpl
+import com.jamirodev.horoscopoapp.domain.Repository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -24,9 +25,15 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideHoroscopeApiService(retrofit: Retrofit):HoroscopeApiService{
+    fun provideHoroscopeApiService(retrofit: Retrofit): HoroscopeApiService {
         return retrofit.create(HoroscopeApiService::class.java)
     }
+
+    @Provides
+    fun provideRepository(apiService: HoroscopeApiService):Repository{
+        return RepositoryImpl(apiService)
+    }
+
 }
 
 
