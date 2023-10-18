@@ -8,7 +8,10 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.navArgs
+import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.ActivityHoroscopeDetailBinding
+import com.jamirodev.horoscopoapp.domain.model.HoroscopeModel
+import com.jamirodev.horoscopoapp.domain.model.HoroscopeModel.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -23,11 +26,16 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         binding = ActivityHoroscopeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
-        horoscopeDetailViewModel.getHoroscope(args.type.name)
+        horoscopeDetailViewModel.getHoroscope(args.type)
     }
 
     private fun initUI() {
+        initListeners()
         initUIState()
+    }
+
+    private fun initListeners() {
+        binding.ivBack.setOnClickListener { onBackPressed() }
     }
 
     private fun initUIState() {
@@ -56,5 +64,21 @@ class HoroscopeDetailActivity : AppCompatActivity() {
         binding.pb.isVisible = false
         binding.tvTitle.text = state.sign
         binding.tvBody.text = state.prediction
+
+        val image = when(state.horoscopeModel){
+            Aries -> R.drawable.detail_aries
+            Taurus -> R.drawable.detail_taurus
+            Geminis -> R.drawable.detail_gemini
+            Cancer -> R.drawable.detail_cancer
+            Leo -> R.drawable.detail_cancer
+            Capricorn -> R.drawable.detail_cancer
+            Scorpio -> R.drawable.detail_scorpio
+            Libra -> R.drawable.detail_libra
+            Aquarius -> R.drawable.detail_aquarius
+            Pisces -> R.drawable.detail_pisces
+            Sagittarius -> R.drawable.detail_sagittarius
+            Virgo -> R.drawable.detail_virgo
+        }
+        binding.ivDetail.setImageResource(image)
     }
 }
