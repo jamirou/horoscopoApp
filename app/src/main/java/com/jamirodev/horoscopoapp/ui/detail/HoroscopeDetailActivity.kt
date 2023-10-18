@@ -15,13 +15,14 @@ import kotlinx.coroutines.launch
 class HoroscopeDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityHoroscopeDetailBinding
-    private val horoscopeDetailViewModel:HoroscopeDetailViewModel by viewModels()
-    private val args:HoroscopeDetailActivityArgs by navArgs()
+    private val horoscopeDetailViewModel: HoroscopeDetailViewModel by viewModels()
+    private val args: HoroscopeDetailActivityArgs by navArgs()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHoroscopeDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initUI()
+        horoscopeDetailViewModel.getHoroscope(args.type.name)
     }
 
     private fun initUI() {
@@ -31,8 +32,8 @@ class HoroscopeDetailActivity : AppCompatActivity() {
     private fun initUIState() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                horoscopeDetailViewModel.state.collect{
-                    when(it){
+                horoscopeDetailViewModel.state.collect {
+                    when (it) {
                         HoroscopeDetailState.Loading -> loadingState()
                         is HoroscopeDetailState.Error -> errorState()
                         is HoroscopeDetailState.Success -> successState()
@@ -44,8 +45,10 @@ class HoroscopeDetailActivity : AppCompatActivity() {
 
     private fun loadingState() {
     }
+
     private fun errorState() {
     }
-    private fun successState(){
+
+    private fun successState() {
     }
 }
