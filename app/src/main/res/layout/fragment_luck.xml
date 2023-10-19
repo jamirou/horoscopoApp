@@ -21,6 +21,7 @@
         android:id="@+id/reverse"
         android:layout_width="60dp"
         android:visibility="invisible"
+        android:scaleType="fitStart"
         android:layout_height="wrap_content"
         android:src="@drawable/card_back_small"
         app:layout_constraintBottom_toBottomOf="parent"
