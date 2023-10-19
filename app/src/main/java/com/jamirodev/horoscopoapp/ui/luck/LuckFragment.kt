@@ -95,7 +95,7 @@ class LuckFragment : Fragment() {
             override fun onAnimationRepeat(animation: Animation?) {}
         })
         binding.preview.startAnimation(disappearAnimation)
-        binding.prediction.startAnimation(appearAnimation) 
+        binding.prediction.startAnimation(appearAnimation)
     }
 
     override fun onCreateView(
