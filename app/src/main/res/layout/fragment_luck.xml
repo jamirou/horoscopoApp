@@ -11,7 +11,7 @@
         android:id="@+id/ivRoulette"
         android:layout_width="0dp"
         android:layout_height="400dp"
-        android:layout_marginBottom="-200dp"
+        android:layout_marginBottom="-240dp"
         android:src="@drawable/ruleta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
