@@ -36,11 +36,17 @@ class LuckFragment : Fragment() {
     }
 
     private fun preparePrediction() {
-        val luck = randomCardProvider.getLucky()
-        luck?.let {
-            binding.tvLucky.text = getString(it.text)
-            binding.ivLuckyCard.setImageResource(it.image) 
+        val currentLuck = randomCardProvider.getLucky()
+        currentLuck?.let {luck ->
+            val currentPrediction = getString(luck.text)
+            binding.tvLucky.text = currentPrediction
+            binding.ivLuckyCard.setImageResource(luck.image)
+            binding.tvShare.setOnClickListener{ shareResult(currentPrediction) }
         }
+    }
+
+    private fun shareResult(prediction: String) {
+         
     }
 
     private fun initListeners() {
