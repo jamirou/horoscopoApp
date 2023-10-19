@@ -46,18 +46,36 @@ class LuckFragment : Fragment() {
 
     private fun slideCard() {
         val slideUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
-        slideUpAnimation.setAnimationListener(object :Animation.AnimationListener {
+        slideUpAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
                 binding.reverse.isVisible = true
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-
+                growCard()
             }
 
             override fun onAnimationRepeat(animation: Animation?) {}
         })
         binding.reverse.startAnimation(slideUpAnimation)
+    }
+
+    private fun growCard() {
+        val growAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.grow_animation)
+        growAnimation.setAnimationListener(object :Animation.AnimationListener{
+            override fun onAnimationStart(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+
+        })
     }
 
     override fun onCreateView(
