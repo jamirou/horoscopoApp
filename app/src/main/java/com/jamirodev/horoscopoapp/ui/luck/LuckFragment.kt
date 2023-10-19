@@ -1,6 +1,7 @@
 package com.jamirodev.horoscopoapp.ui.luck
 
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -46,7 +47,14 @@ class LuckFragment : Fragment() {
     }
 
     private fun shareResult(prediction: String) {
-         
+         val sendIntent:Intent = Intent().apply {
+             action = Intent.ACTION_SEND
+             putExtra(Intent.EXTRA_TEXT, prediction)
+             type = "text/plain"
+         }
+
+        val shareIntent = Intent.createChooser(sendIntent, null)
+        startActivity(shareIntent)
     }
 
     private fun initListeners() {
