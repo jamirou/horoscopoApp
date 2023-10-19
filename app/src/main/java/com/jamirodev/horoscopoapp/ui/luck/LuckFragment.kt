@@ -15,20 +15,32 @@ import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
 import com.jamirodev.horoscopoapp.ui.model.LuckyModel
+import com.jamirodev.horoscopoapp.ui.providers.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class LuckFragment : Fragment() {
-
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
+    @Inject
+    lateinit var randomCardProvider: RandomCardProvider
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUi()
     }
 
     private fun initUi() {
+        preparePrediction()
         initListeners()
+    }
+
+    private fun preparePrediction() {
+        val luck = randomCardProvider.getLucky()
+        luck?.let {
+            binding.tvLucky.text = getString(it.text)
+            binding.ivLuckyCard.setImageResource(it.image)
+        }
     }
 
     private fun initListeners() {
