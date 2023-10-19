@@ -9,6 +9,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import androidx.core.animation.doOnEnd
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
@@ -39,7 +40,7 @@ class LuckFragment : Fragment() {
             ObjectAnimator.ofFloat(binding.ivRoulette, View.ROTATION, 0f, degrees.toFloat())
         animator.duration = 2000
         animator.interpolator = DecelerateInterpolator()
-        animator.doOnEnd {  }
+        animator.doOnEnd { slideCard() }
         animator.start()
     }
 
@@ -47,18 +48,16 @@ class LuckFragment : Fragment() {
         val slideUpAnimation = AnimationUtils.loadAnimation(requireContext(), R.anim.slide_up)
         slideUpAnimation.setAnimationListener(object :Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {
-                TODO("Not yet implemented")
+                binding.reverse.isVisible = true
             }
 
             override fun onAnimationEnd(animation: Animation?) {
-                TODO("Not yet implemented")
+
             }
 
-            override fun onAnimationRepeat(animation: Animation?) {
-                TODO("Not yet implemented")
-            }
-
+            override fun onAnimationRepeat(animation: Animation?) {}
         })
+        binding.reverse.startAnimation(slideUpAnimation)
     }
 
     override fun onCreateView(
