@@ -82,18 +82,16 @@ class LuckFragment : Fragment() {
         disappearAnimation.duration = 200
 
         disappearAnimation.setAnimationListener(object : Animation.AnimationListener {
-            override fun onAnimationStart(animation: Animation?) {
-                TODO("Not yet implemented")
-            }
+            override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
-                TODO("Not yet implemented")
+                binding.preview.isVisible = false
+                binding.prediction.isVisible = true
             }
 
-            override fun onAnimationRepeat(animation: Animation?) {
-                TODO("Not yet implemented")
-            }
+            override fun onAnimationRepeat(animation: Animation?) {}
         })
+        binding.preview.startAnimation(disappearAnimation)
     }
 
     override fun onCreateView(
