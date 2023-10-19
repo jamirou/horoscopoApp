@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
@@ -66,13 +67,33 @@ class LuckFragment : Fragment() {
             override fun onAnimationStart(animation: Animation?) {}
 
             override fun onAnimationEnd(animation: Animation?) {
-                //cositas
+                binding.reverse.isVisible = false
+                showPredictionView()
             }
 
             override fun onAnimationRepeat(animation: Animation?) {}
 
         })
         binding.reverse.startAnimation(growAnimation)
+    }
+
+    private fun showPredictionView() {
+        val disappearAnimation = AlphaAnimation(1.0f, 0.0f)
+        disappearAnimation.duration = 200
+
+        disappearAnimation.setAnimationListener(object : Animation.AnimationListener {
+            override fun onAnimationStart(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAnimationEnd(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+
+            override fun onAnimationRepeat(animation: Animation?) {
+                TODO("Not yet implemented")
+            }
+        })
     }
 
     override fun onCreateView(
