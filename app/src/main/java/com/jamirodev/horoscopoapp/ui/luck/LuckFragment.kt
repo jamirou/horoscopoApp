@@ -13,6 +13,23 @@ class LuckFragment : Fragment() {
 
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initUi()
+    }
+
+    private fun initUi() {
+        initListeners()
+    }
+
+    private fun initListeners() {
+        binding.ivRoulette.setOnClickListener{ spinRoulette() }
+    }
+
+    private fun spinRoulette() {
+        TODO("Not yet implemented")
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
