@@ -64,26 +64,29 @@
 
         <TextView
             android:id="@+id/tvLucky"
+            style="@style/Body"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            style="@style/Body"
             android:layout_margin="32dp"
             android:gravity="center"
-            tools:text="Hello android:)))"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvShare"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivLuckyCard" />
+            app:layout_constraintTop_toBottomOf="@+id/ivLuckyCard"
+            tools:text="Hello android:)))" />
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
             android:id="@+id/tvShare"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            style="@style/Body"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
             android:text="@string/share"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvLucky"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLucky" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
