@@ -39,7 +39,7 @@ class LuckFragment : Fragment() {
         val luck = randomCardProvider.getLucky()
         luck?.let {
             binding.tvLucky.text = getString(it.text)
-            binding.ivLuckyCard.setImageResource(it.image)
+            binding.ivLuckyCard.setImageResource(it.image) 
         }
     }
 
