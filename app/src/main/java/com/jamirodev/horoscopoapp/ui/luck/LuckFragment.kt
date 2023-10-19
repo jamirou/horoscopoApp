@@ -14,6 +14,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
+import com.jamirodev.horoscopoapp.ui.model.LuckyModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -94,6 +95,7 @@ class LuckFragment : Fragment() {
 
             override fun onAnimationRepeat(animation: Animation?) {}
         })
+
         binding.preview.startAnimation(disappearAnimation)
         binding.prediction.startAnimation(appearAnimation)
     }
