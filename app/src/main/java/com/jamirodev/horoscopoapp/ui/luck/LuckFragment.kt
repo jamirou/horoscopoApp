@@ -1,6 +1,7 @@
 package com.jamirodev.horoscopoapp.ui.luck
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
+import com.jamirodev.horoscopoapp.ui.core.listeners.OnSwipeTouchListener
 import com.jamirodev.horoscopoapp.ui.model.LuckyModel
 import com.jamirodev.horoscopoapp.ui.providers.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
@@ -57,9 +59,19 @@ class LuckFragment : Fragment() {
         startActivity(shareIntent)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     private fun initListeners() {
-        binding.ivRoulette.setOnClickListener { spinRoulette() }
+//        binding.ivRoulette.setOnClickListener { spinRoulette() }
+        binding.ivRoulette.setOnTouchListener (object : OnSwipeTouchListener(requireContext()) {
+            override fun onSwipeRight() {
+                spinRoulette()
+            }
+            override fun onSwipeLeft() {
+                spinRoulette()
+            }
+        })
     }
+
 
     private fun spinRoulette() {
         val random = java.util.Random()
