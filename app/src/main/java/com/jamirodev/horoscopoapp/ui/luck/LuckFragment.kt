@@ -81,6 +81,9 @@ class LuckFragment : Fragment() {
         val disappearAnimation = AlphaAnimation(1.0f, 0.0f)
         disappearAnimation.duration = 200
 
+        val appearAnimation = AlphaAnimation(0.0f, 1.0f)
+        appearAnimation.duration = 1000
+
         disappearAnimation.setAnimationListener(object : Animation.AnimationListener {
             override fun onAnimationStart(animation: Animation?) {}
 
@@ -92,6 +95,7 @@ class LuckFragment : Fragment() {
             override fun onAnimationRepeat(animation: Animation?) {}
         })
         binding.preview.startAnimation(disappearAnimation)
+        binding.prediction.startAnimation(appearAnimation)
     }
 
     override fun onCreateView(

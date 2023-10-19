@@ -60,7 +60,7 @@
             app:layout_constraintHeight_percent="0.6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:background="@color/red" />
+            android:background="@color/red" />
 
         <TextView
             android:id="@+id/tvLucky"
