@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import androidx.core.animation.doOnEnd
 import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,7 +36,12 @@ class LuckFragment : Fragment() {
             ObjectAnimator.ofFloat(binding.ivRoulette, View.ROTATION, 0f, degrees.toFloat())
         animator.duration = 2000
         animator.interpolator = DecelerateInterpolator()
+        animator.doOnEnd {  }
         animator.start()
+    }
+
+    private fun slideCard() {
+        
     }
 
     override fun onCreateView(
