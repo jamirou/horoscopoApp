@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment
 import com.jamirodev.horoscopoapp.R
 import com.jamirodev.horoscopoapp.databinding.FragmentLuckBinding
 import com.jamirodev.horoscopoapp.ui.core.listeners.OnSwipeTouchListener
-import com.jamirodev.horoscopoapp.ui.model.LuckyModel
 import com.jamirodev.horoscopoapp.ui.providers.RandomCardProvider
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
