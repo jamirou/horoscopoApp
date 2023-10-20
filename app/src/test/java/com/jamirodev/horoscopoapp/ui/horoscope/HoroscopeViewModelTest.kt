@@ -28,6 +28,6 @@ class HoroscopeViewModelTest{
 
         val horoscopes = viewModel.horoscope.value
 
-        assertTrue(horoscopes.isNotEmpty())
+        assertTrue(horoscopes.isNotEmpty()) 
     }
 }
