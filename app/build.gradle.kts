@@ -89,10 +89,10 @@ dependencies {
     testImplementation("io.mockk:mockk:1.12.3")
 
     //Ui Testing
-    androidTestImplementation("")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation("androidx.test.espresso:espresso-intents:3.4.0")
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.48")
     androidTestImplementation("androidx.fragment:fragment-testing:1.6.1")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.48")
