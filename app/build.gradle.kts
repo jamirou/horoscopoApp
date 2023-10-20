@@ -71,11 +71,11 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 
     //CameraX
-    implementation("androix.camera:camera-core:${cameraVersion}")
-    implementation("androix.camera:camera-camera2:${cameraVersion}")
-    implementation("androix.camera:camera-lifecycle:${cameraVersion}")
-    implementation("androix.camera:camera-view:${cameraVersion}")
-    implementation("androix.camera:camera-extensions:${cameraVersion}")
+    implementation("androidx.camera:camera-core:${cameraVersion}")
+    implementation("androidx.camera:camera-camera2:${cameraVersion}")
+    implementation("androidx.camera:camera-lifecycle:${cameraVersion}")
+    implementation("androidx.camera:camera-view:${cameraVersion}")
+    implementation("androidx.camera:camera-extensions:${cameraVersion}")
 
 
     implementation("androidx.core:core-ktx:1.9.0")
